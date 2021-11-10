@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import BookCarousel from './BookCarousel';
-import { Carousel} from 'react-bootstrap';
+
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class BestBooks extends React.Component {
   }
 
   getBooks = async()=>{
-    let url = process.env.DB_URL;
+    let url = `${process.env.DB_URL}/books?email=${this.props.email}`;
     const response = await axios.get(url);
     this.setState({books:response.data})
   }
@@ -31,8 +31,7 @@ class BestBooks extends React.Component {
       <>
         <h2>My Essential Lifelong Learning &amp; Formation Shelf</h2>
 
-        {this.state.books.length ? (<Carousel>
-          {this.state.books.map(books =>  <Carousel.Item key={books._id}> <BookCarousel books={books}/></Carousel.Item>)}</Carousel>
+        {this.state.books.length ? (<BookCarousel books={this.state.books}/>
         ) : (
           <h3>No Books Found :(</h3>
         )}
