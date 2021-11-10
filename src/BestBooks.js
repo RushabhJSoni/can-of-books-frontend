@@ -25,7 +25,7 @@ class BestBooks extends React.Component {
 
   render() {
 
-    /* TODO: render user's books in a Carousel */
+    /* TODO: render user's books in a Carousel d*/
 
     return (
       <>
