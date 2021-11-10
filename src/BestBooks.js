@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import BookCarousel from './BookCarousel';
-import { Carousel, Container } from 'react-bootstrap';
+import { Carousel} from 'react-bootstrap';
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class BestBooks extends React.Component {
   }
 
   getBooks = async()=>{
-    let url = `http://localhost:3001/books`;
+    let url = process.env.DB_URL;
     const response = await axios.get(url);
     this.setState({books:response.data})
   }
