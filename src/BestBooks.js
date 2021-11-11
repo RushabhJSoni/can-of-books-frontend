@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import BookCarousel from './BookCarousel';
-import { Carousel, Container } from 'react-bootstrap';
 import AddBookModal from './AddBookModal.js';
 import AddButton from './AddButton.js'
-import Book from './Book'
+
 
 
 class BestBooks extends React.Component {

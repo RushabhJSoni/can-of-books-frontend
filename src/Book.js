@@ -1,6 +1,5 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import { Container } from 'react-bootstrap';
 import img from './ferrari.jpg'
 import Button from 'react-bootstrap/Button'
 
