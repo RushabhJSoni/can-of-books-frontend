@@ -22,7 +22,9 @@ class App extends React.Component {
   loginHandler = (user) => {
     this.setState({
       user,
+      
     })
+    console.log(user);
   }
 
   logoutHandler = () => {
@@ -31,6 +33,8 @@ class App extends React.Component {
     })
   }
 
+  
+
   render() {
     return (
       <>
@@ -38,7 +42,7 @@ class App extends React.Component {
           <Header user={this.state.user} onLogout={this.logoutHandler} />
           <Switch>
             <Route exact path="/">
-            {this.state.user ? <BestBooks email={this.state.user} /> : <Login loginHandler={this.loginHandler}/>}
+            {this.state.user ? <BestBooks user={this.state.user} /> : <Login loginHandler={this.loginHandler}/>}
             </Route>
             <Login loginHandler={this.loginHandler}/>
             
