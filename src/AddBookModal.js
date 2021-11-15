@@ -17,6 +17,11 @@ export default class AddBookModal extends Component {
 
     }
 
+    handleClick = () =>{
+      this.props.addBooks();
+    }
+    
+
   render() {
     return (
       
